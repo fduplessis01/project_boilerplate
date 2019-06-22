@@ -11,6 +11,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faSearch, faThLarge, faClipboardList,faYenSign, faClock, faChevronDown, faMapMarkerAlt, faPhone, faEnvelopeSquare, faWindowMaximize, faDirections } from '@fortawesome/free-solid-svg-icons'
 import DropdownElement from "./components/dropdownelement.js";
+
 library.add(faSearch, faThLarge, faClipboardList, faYenSign, faClock,faChevronDown,faMapMarkerAlt,faPhone, faEnvelopeSquare, faWindowMaximize, faDirections)
 
 
@@ -19,8 +20,21 @@ class App extends React.Component {
     super(props);
     this.state = {
       formInput: '',
-      searchResults: [],
-      currentRestaurant: '1',
+      searchResults: {
+        uuid: 0,
+        GPS : {
+        },
+        openTimes : {
+        sunday: [],
+        monday: [],
+        tuesday: [],
+        wednesday: [],
+        thursday: [],
+        friday: [],
+        saturday: []
+
+        }
+      },
       info: {
         uuid: 2,
         GPS : {
@@ -43,7 +57,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('/readRecord', {params: {uuid: this.state.currentRestaurant}})
+    axios.get('/readRecord', {params: {uuid: this.state.info.uuid}})
     .then((response)=>{
       console.log(response.data),
       this.setState({     
@@ -55,12 +69,12 @@ class App extends React.Component {
     })
   }
 
-  componentDidUpdate(prevProps){
-    if (this.props.uuid !== prevProps.uuid) {
-        console.log('test', this.props.uuid)
-        axios.get('/readRecord', {params: {uuid: this.props.uuid}})
+  componentDidUpdate(prevProps, prevState){
+    if (this.props.searchResults !== prevProps.searchResults) {
+        console.log('test', this.props.searchResults)
+        axios.get('/readRecord', {params: {uuid: this.props.searchResults.uuid}})
            .then((response)=>{
-             console.log(response.data), 
+             console.log('component did update',response.data), 
              this.setState({
                info: response.data
               })
@@ -71,15 +85,19 @@ class App extends React.Component {
     }
   }
 
-  selectFoodTruck(e, info){
-    this.setState({info : info.toString()}, ()=>{this.props.uuidUpdateHandler(null, this.state.info)});
+  selectFoodTruck(){
+    if(this.state.searchResults.uuid !== 0 && this.state.searchResults.uuid !== undefined){
+      console.log('searchresults.uuid',this.state.searchResults.uuid)
+      this.setState({info: this.state.searchResults});
+    }
+ 
 }
 
 searchBarInputHandler(e){
   this.setState({formInput: e.target.value}, ()=>{
-      axios.get('/readRecord', {query : this.state.formInput, type: "form input"})
+      axios.get('/readName', {params : {name: this.state.formInput}})
       .then((response)=>{this.setState({searchResults: response.data})})
-      .catch(()=>{console.log('there was an error posting the query')});
+      .catch(()=>{console.log('there was an error posting the query')})
   })
 
 }
@@ -87,12 +105,12 @@ searchBarInputHandler(e){
   render() {
     return (
     <div>
-      <h1>Food Truck App</h1>
+      <h1>Find Your Fav Food Truck</h1>
       <div id= 'search-focus-opacity'   style={this.state.searchFocus}>
       </div>
 
 
-      <SearchBar info={this.props.info} searchBarInputHandler={this.searchBarInputHandler} formInput={this.state.formInput} selectFoodTruck={this.selectFoodTruck}/>
+       <SearchBar info={this.props.info} searchBarInputHandler={this.searchBarInputHandler} formInput={this.state.formInput} selectFoodTruck={this.selectFoodTruck}/>
       <Infobar info={this.state.info}/>
       <OpenTime info={this.state.info}/>
       <Map info={this.state.info}/>

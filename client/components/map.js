@@ -21,7 +21,7 @@ const Map = (props) => {
           <AnyReactComponent
             lat={props.info.GPS.x}
             lng={props.info.GPS.y}
-            text="My Marker"
+            text={props.info.name}
           />
         </GoogleMapReact>
       </div>

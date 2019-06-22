@@ -1,0 +1,187 @@
+body{
+    background-color: rgb(250,250,250);
+}
+
+.mainInfo {
+    position: relative;
+    top: 500px;
+    left: 100px;
+}
+.boxTitleInfo{
+    position: relative;
+    height: 100%;
+    margin-top: 500px;
+    padding: 0px 40px 40px;
+    min-height: 100%;
+    width: 53%;
+    display: block;
+    margin: 15px;
+    letter-spacing: .013em;
+    font-family: "Calibre-Regular";
+    color: #101820;
+    float: center;
+    background-color: white;
+}
+.boxTimeOneInfo {
+    display: flex;
+    width: 27%;
+    position: absolute;
+    right: 260px;
+    top: -15px;
+    transform: translate3d(0,0,0);
+    max-height: calc(100vh - 80px - 40px - 40px);
+    overflow-y: auto;
+    margin-right: 40px;
+    min-height: 40%;
+    margin: 15px;
+    letter-spacing: .013em;
+    font-family: "Calibre-Regular";
+    color: #101820;
+    float: center;
+    padding: 0px 40px 40px;
+    display: block;
+    background-color: white;
+}
+.boxTimeTwoInfo {
+    display: flex;
+    width: 27%;
+    position: absolute;
+    right: 260px;
+    top: 50px;
+    overflow-y: auto;
+    min-height: 50%;
+    transform: translate3d(0,0,0);
+    margin-right: 40px;
+    max-height: calc(100vh - 80px - 40px - 40px);
+    margin: 15px;
+    letter-spacing: .013em;
+    font-family: "Calibre-Regular";
+    color: #101820;
+    float: center;
+    display: block;
+    padding: 0px 40px 40px;
+    background-color: white;
+}
+.boxTimeThreeInfo {
+    display: flex;
+    width: 27%;
+    position: absolute;
+    right: 260px;
+    top: 250px;
+    overflow-y: auto;
+    min-height: 30%;
+    transform: translate3d(0,0,0);
+    margin-right: 40px;
+    max-height: calc(100vh - 80px - 40px - 40px);
+    margin: 15px;
+    letter-spacing: .013em;
+    font-family: "Calibre-Regular";
+    color: #101820;
+    float: center;
+    display: block;
+    padding: 28px 28px 40px;
+    background-color: white;
+}
+.addressInfo:hover, .openTimesInfo:hover, .phoneInfo:hover, .emailInfo:hover, .websiteInfo:hover, .directionsInfo:hover{
+    color: red;
+    cursor: pointer;   
+}
+.addressInfo, .openTimesInfo, .phoneInfo, .emailInfo, .websiteInfo, .directionsInfo, .addTimesInfo, .categoryInfo {
+    letter-spacing: 2px; 
+    padding: 28px 0 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: red;
+}
+.titleInfo {
+    font-family: "Calibre-Medium";
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 36px;
+    line-height: 44px;
+    margin: 0;
+    padding: 28px 0 0;
+    letter-spacing: .086em;
+    text-transform: uppercase;
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #101820;
+    font-weight: bold;
+}
+.bldInfo, .dollarInfo, .categoryInfo {
+    color: #dc143c;
+    letter-spacing: .013em;
+    flex-direction: row;
+    border-bottom: 1px #dc143c solid;
+    text-decoration: none;
+    cursor: pointer;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 15px;
+    line-height: 24px;
+    font-family: "Calibre-Regular";
+}
+.iconInfo {
+    color: #dc143c;
+    font-size: 20px;
+    letter-spacing: .013em;
+}
+.iconLineInfo{
+    padding: 28px 0 0;
+    color: #dc143c;
+}
+.iconYenInfo{
+    /* padding: 28px 0 0; */
+    color: #dc143c;
+    font-size: 30px;
+    background-color: red;
+    border-radius: 50px;
+    height: 25px;
+    width: 25px;
+
+}
+.reviewTitleInfo{
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Calibre-Semibold;
+    letter-spacing: .086em;
+    text-transform: uppercase;
+    padding: 28px 0 0;
+    color: #dc143c;
+    
+}
+.reviewTextInfo {
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: .086em;
+    color: #101820;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-family: Calibre-Regular;
+    padding: 28px 0 0;
+}

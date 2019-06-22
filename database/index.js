@@ -56,6 +56,7 @@ let Info = mongoose.model('Info', infoSchema, 'data');
     })
   }
 
+
   let createData = (obj,cb) => {
     Info.create(obj, (err,data) => {
       if(err){

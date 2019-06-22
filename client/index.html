@@ -1,21 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Food Truck App</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./stylesheet.css"/> -->
+    <title>Find Your Fav Food Truck</title>
     <style>
-      .infobar{
-        height: 500px;
-        width: 500px;
-        color: blue;
-      }
-      .image{
-        max-height: 500px;
-        max-width: 500px;
 
+      body{
+          background-color: rgb(205, 192, 192);
       }
+      
+    .titleInfo, .searchform {
+    font-family: "Calibre-Medium";
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 36px;
+    line-height: 44px;
+    margin: 0;
+    padding: 28px 0 0;
+    letter-spacing: .086em;
+    text-transform: uppercase;
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: rgb(148, 93, 22);
+    font-weight: bold;
+}
+.addressInfo, .phoneInfo, .emailInfo, .websiteInfo, .directionsInfo, .addTimesInfo, .categoryInfo, .menuInfo {
+    letter-spacing: 2px; 
+    padding: 28px 0 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: rgb(25, 0, 255);
+}
+
+.openTimesInfo {
+    letter-spacing: 2px; 
+    padding: 28px 0 0;
+    font-size: 25px;
+    line-height: 20px;
+    color: rgb(25, 0, 255);
+
+}
+
+.info{
+  letter-spacing: 2px; 
+    padding: 28px 0 0;
+    font-size: 20px;
+    line-height: 20px;
+    color: rgb(80, 67, 67);
+    width: 500px;
+    text-emphasis-style: bold;
+
+}
+.addressInfo:hover, .openTimesInfo:hover, .phoneInfo:hover, .emailInfo:hover, .websiteInfo:hover, .directionsInfo:hover, .menuInfo:hover, .categoryInfo:hover{
+    color: red;
+    cursor: pointer;   
+}
+.iconInfo {
+    color: #dc143c;
+    font-size: 20px;
+    letter-spacing: .013em;
+}
+.iconLineInfo{
+    padding: 28px 0 0;
+    color: #dc143c;
+}
+.boxTimeOneInfo {
+    display: flex;
+    width: 27%;
+    position: absolute;
+    right: 160px;
+    top: 500px;
+    transform: translate3d(0,0,0);
+    max-height: calc(100vh - 80px - 40px - 40px);
+    overflow-y: auto;
+    margin-right: 40px;
+    min-height: 40%;
+    margin: 15px;
+    letter-spacing: .013em;
+    font-family: "Calibre-Regular";
+    color: #101820;
+    float: center;
+    padding: 0px 40px 40px;
+    display: block;
+   
+    
+}
+
+.map1 {
+    display: flex;
+    width: 27%;
+    position: absolute;
+    right: 260px;
+    top: 600px;
+    overflow-y: auto;
+    min-height: 50%;
+    transform: translate3d(0,0,0);
+    margin-right: 40px;
+    max-height: calc(100vh - 80px - 40px - 40px);
+    margin: 15px;
+    letter-spacing: .013em;
+    font-family: "Calibre-Regular";
+    color: #101820;
+    float: center;
+    display: block;
+    padding: 0px 40px 40px;
+    background-color: aliceblue;
+    
+}
+.image {
+    display: flex;
+    width: 27%;
+    position: absolute;
+    right: 280px;
+    top: 0px;
+    overflow-y: auto;
+    min-height: 40%;
+    transform: translate3d(0,0,0);
+    margin-right: 40px;
+    max-height: calc(100vh - 80px - 40px - 40px);
+    margin: 15px;
+    letter-spacing: .013em;
+    font-family: "Calibre-Regular";
+    color: #101820;
+    float: center;
+    display: block;
+    padding: 28px 28px 40px;
+    
+}
+
 
     </style>
   </head>

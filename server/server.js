@@ -24,7 +24,24 @@ app.use(
                     res.send('Error, cant retrieve record as it does not exist')
                 } else {
                     res.send(data)
-                    console.log('/retieve data in server side', data)
+                    console.log('/Read uuid retieve data in server side', data)
+                }
+            }
+        })
+    });
+
+    app.get('/readName', (req,res) => {
+         let obj = {name: {$regex: '.*' + req.query.name + '.*'}}
+        db.readData(obj, (err,data) => {
+            if(err){
+                console.log('error in retrieve data in server side', err);
+                res.end();
+            } else {
+                if(data === null){
+                    res.send('Error, cant retrieve record as it does not exist')
+                } else {
+                    res.send(data)
+                    console.log('/Read Name retieve data in server side', data)
                 }
             }
         })

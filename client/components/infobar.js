@@ -6,7 +6,7 @@ const Infobar = (props) => {
 
     return(
         <div className='infobar'>
-            <div><h1>{props.info.name}</h1></div>
+            <div className='titleInfo'><h1>{props.info.name}</h1></div>
             <div className="addressInfo">
                     <span><FontAwesomeIcon icon="map-marker-alt" className="iconInfo" /> </span>
                     <span>{props.info.address}</span>
@@ -32,7 +32,7 @@ const Infobar = (props) => {
                     <span>{props.info.category}</span>
             </div>
             
-            <div className="infoInfo">
+            <div className="info">
                     <div><h4>Info on {props.info.name}</h4></div>
                     <div>{props.info.info}</div>
             </div>

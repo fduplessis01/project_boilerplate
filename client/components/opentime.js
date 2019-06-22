@@ -6,7 +6,7 @@ const OpenTime = (props) => {
     return (
         <div className="boxTimeOneInfo">
            <div className="openTimesInfo"> 
-            <span><FontAwesomeIcon icon="clock" className="iconInfo" /> </span> 
+            <span><FontAwesomeIcon icon="clock" className="iconInfo" /> OPENING TIMES </span> 
                 <div className="addTimesInfo" >
                 <br/>Monday.......... {props.info.openTimes.monday[0]} - {props.info.openTimes.monday[1]}
                 <br/>Tuesday.......... {props.info.openTimes.tuesday[0]} - {props.info.openTimes.tuesday[1]}
